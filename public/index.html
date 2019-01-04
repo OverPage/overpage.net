@@ -7,17 +7,12 @@
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/5.7.2/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.7.2/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.7.2/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.7.2/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.7.2/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
 
     <style media="screen">
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message { background: white; max-width: 480px; margin: 20px auto 16px; padding: 32px 24px; border-radius: 3px; }
       #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
       #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
       #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
@@ -28,35 +23,124 @@
         body, #message { margin-top: 0; background: white; box-shadow: none; }
         body { border-top: 16px solid #ffa100; }
       }
+      table.company {
+        width: 480px;
+        margin: 0 auto;
+        border-collapse: separate;
+        border-spacing: 0px 15px;
+        font-size: 12px;
+      }
+
+      table.company th,
+      table.company td {
+        padding: 10px;
+      }
+
+      table.company th {
+        background: #295890;
+        vertical-align: middle;
+        text-align: left;
+        width: 100px;
+        overflow: visible;
+        position: relative;
+        color: #fff;
+        font-weight: normal;
+        font-size: 15px;
+      }
+
+      table.company th.arrow_box:after {
+        left: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-left-color: #295890;
+        border-width: 10px;
+        margin-top: -10px;
+      }
+      /* firefox */
+      @-moz-document url-prefix() {
+        table.company th::after {
+          float: right;
+          padding: 0;
+          left: 30px;
+          top: 10px;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: relative;
+          pointer-events: none;
+          border: 10px solid transparent;
+          border-left: #295890 10px solid;
+          margin-top: -10px;
+        }
+      }
+
+      table.company td {
+        background: #f8f8f8;
+        width: 360px;
+        padding-left: 20px;
+      }
     </style>
   </head>
   <body>
     <div id="message">
-      <h1>株式会社OverPage</h1>
-      <p></p>
+      <h1>Create the network in spatial interface</h1>
+      <p>〜空間インターフェースの中に情報網を作る〜</p>
+      <table class="company">
+        <tbody>
+        <tr>
+          <th class="arrow_box">会社名</div></th>
+          <td>株式会社OverPage</td>
+        </tr>
+        <tr>
+          <th class="arrow_box">設立年月日</div></th>
+          <td>2018年8月24日</td>
+        </tr>
+        <tr>
+          <th class="arrow_box">本店所在地</th>
+          <td>
+          〒135-0047<br>
+          東京都江東区富岡1-25-5
+          </td>
+        </tr>
+        <!-- <tr>
+          <th>TEL</th>
+          <td>
+          03-6240-1253
+          </td>
+        </tr> -->
+        <tr>
+          <th class="arrow_box">企業理念</th>
+          <td>「空間インターフェースの中に情報網を作る」</td>
+        </tr>
+        <tr>
+          <th class="arrow_box">代表者</th>
+          <td>代表取締役 田中 俊也</td>
+        </tr>
+        <tr>
+          <th class="arrow_box">資本金</th>
+          <td>100万円</td>
+        </tr>
+        <tr>
+          <th class="arrow_box">社員数</th>
+          <td>1人</td>
+        </tr>
+        <tr>
+          <th class="arrow_box">事業内容</th>
+          <td>
+          (1)web、MixedReality、Blockchain等の次世代インターネットに関する調査及び研究開発<br>
+          (2)インターネット・コンテンツ及びサービスの企画、開発並びに販売、運営<br>
+          (3)電子商取引売買代金の決済及びその代行<br>
+          (4)広告・宣伝に関する業務及び代理業務
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
   </body>
 </html>
