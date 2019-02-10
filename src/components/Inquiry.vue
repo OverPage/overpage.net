@@ -107,7 +107,7 @@ export default {
 <style scoped lang="scss">
 #inquiry {
   background: white;
-  max-width: 480px;
+  max-width: 780px;
   margin: 20px auto 16px;
   padding: 32px 24px;
   border-radius: 3px;

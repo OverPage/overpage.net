@@ -45,10 +45,11 @@ body {
 }
 
 h1 {
-  font-size: 22px;
+  font-size: 2.5em;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.6);
   margin: 0 0 16px;
+  text-align: center;
 }
 
 h2 {
