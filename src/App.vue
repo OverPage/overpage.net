@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <v-content>
+      <div id="logo-wrapper">
+        <img id="logo" alt="logo" src="./assets/logo.jpg">
+      </div>
       <About/>
       <Inquiry/>
     </v-content>
@@ -42,6 +45,21 @@ body {
     box-shadow: none;
   }
   /* body { border-top: 16px solid #ffa100; } */
+}
+
+#logo-wrapper {
+  text-align: center;
+  margin-top: 24px;
+  @media (max-width: 600px) {
+    margin-top: 0;
+  }
+
+  img#logo {
+    width: 50%;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
 }
 
 h1 {

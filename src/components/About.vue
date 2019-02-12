@@ -1,7 +1,6 @@
 <template>
   <div id="about">
     <v-container>
-      <h1>Create the worth network with the spatial interface</h1>
       <h2>会社概要</h2>
       <table class="company">
         <tbody>
