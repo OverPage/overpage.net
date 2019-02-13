@@ -51,7 +51,7 @@ body {
   text-align: center;
   margin-top: 24px;
   @media (max-width: 600px) {
-    margin-top: 0;
+    margin-top: 12px;
   }
 
   img#logo {
