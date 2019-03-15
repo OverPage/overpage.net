@@ -27,10 +27,10 @@ export default {
   a {
     display: block;
     text-align: center;
-    background: #039be5;
+    background: #f8f8f8;
     text-transform: uppercase;
     text-decoration: underline;
-    color: white;
+    color: #000;
     padding: 16px;
     border-radius: 4px;
   }
