@@ -4,6 +4,7 @@
       <div id="logo-wrapper">
         <img id="logo" alt="logo" src="./assets/logo.jpg">
       </div>
+      <News/>
       <About/>
       <Inquiry/>
     </v-content>
@@ -11,12 +12,14 @@
 </template>
 
 <script>
+import News from "./components/News";
 import About from "./components/About";
 import Inquiry from "./components/Inquiry";
 
 export default {
   name: "App",
   components: {
+    News,
     About,
     Inquiry
   },
@@ -38,6 +41,7 @@ body {
 }
 @media (max-width: 600px) {
   body,
+  #news,
   #about,
   #inquiry {
     margin-top: 0;
