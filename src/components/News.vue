@@ -3,6 +3,9 @@
     <v-container>
       <h2>プレスリリース</h2>
       <a
+        href="https://prtimes.jp/main/html/rd/p/000000002.000041982.html"
+      >2019/4/30 ブロックチェーンを活用したYouTuber/VTuber向けマーケティング支援ツール「アポイタカラ 」で音声ファイルのトークンを開始</a>
+      <a
         href="https://prtimes.jp/main/html/rd/p/000000001.000041982.html"
       >2019/3/13 株式会社OverPage、ブロックチェーンを活用したYouTuber/VTuber向けマーケティング支援ツール「アポイタカラ 」のアルファ版を開始</a>
     </v-container>
