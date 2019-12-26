@@ -3,6 +3,9 @@
     <v-container>
       <h2>プレスリリース</h2>
       <a
+        href="https://prtimes.jp/main/html/rd/p/000000004.000041982.html"
+      >2019/12/26 ブロックチェーンを活用したYouTuber/VTuber向けマーケティング支援ツール「アポイタカラ 」でツイキャスをサポート開始！</a>
+      <a
         href="https://prtimes.jp/main/html/rd/p/000000003.000041982.html"
       >2019/9/22 ブロックチェーンを活用したYouTuber/VTuber向けマーケティング支援ツール「アポイタカラ 」をメインネットに移行</a>
       <a
