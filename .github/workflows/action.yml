@@ -20,6 +20,11 @@ jobs:
           npm run lint
         env:
           CI: true
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: hosting-build
+          path: ./dist
 
   build-functions:
     name: BuildFunctions
@@ -46,6 +51,14 @@ jobs:
       - uses: actions/setup-node@master
         with:
           version: 10
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: hosting-build
+      - name: copy hosting-build to ./dist
+        run: |
+          mkdir dist
+          mv -f ./hosting-build/* ./dist/
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
@@ -62,6 +75,12 @@ jobs:
       - uses: actions/setup-node@master
         with:
           version: 10
+      - name: npm install
+        working-directory: ./functions
+        run: |
+          npm ci
+        env:
+          CI: true
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
