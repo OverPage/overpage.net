@@ -8,15 +8,11 @@ jobs:
   build-app:
     name: BuildApp
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
         with:
-          node-version: ${{ matrix.node-version }}
+          version: 10
       - name: npm install, build, and test
         run: |
           npm ci
@@ -28,15 +24,11 @@ jobs:
   build-functions:
     name: BuildFunctions
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
         with:
-          node-version: ${{ matrix.node-version }}
+          version: 10
       - name: npm install, build, and test
         run: |
           cd functions
@@ -47,17 +39,13 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: build
+    needs: [build-app, build-functions]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
         with:
-          node-version: ${{ matrix.node-version }}
+          version: 10
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
