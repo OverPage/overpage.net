@@ -81,6 +81,15 @@ jobs:
           npm ci
         env:
           CI: true
+      - name: set config
+        uses: w9jds/firebase-action@master
+        with:
+          args: functions:config:set gmail.email=$FIREBASE_CONFIG_GMAIL_ADDRESS gmail.password=$FIREBASE_CONFIG_GMAIL_PASSWORD admin.email=$FIREBASE_CONFIG_ADMIN_ADDRESS
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_CONFIG_GMAIL_ADDRESS: ${{ secrets.FIREBASE_CONFIG_GMAIL_ADDRESS }}
+          FIREBASE_CONFIG_GMAIL_PASSWORD: ${{ secrets.FIREBASE_CONFIG_GMAIL_PASSWORD }}
+          FIREBASE_CONFIG_ADMIN_ADDRESS: ${{ secrets.FIREBASE_CONFIG_ADMIN_ADDRESS }}
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
