@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint",
     "deploy": "npm run build && firebase deploy"
   },
+  "engines": {
+    "node": "10"
+  },
   "dependencies": {
     "firebase": "^5.8.1",
     "vue": "^2.5.21",
