@@ -30,8 +30,8 @@ jobs:
         with:
           version: 10
       - name: npm install, build, and test
+        working-directory: ./functions
         run: |
-          cd functions
           npm ci
           npm run lint
         env:
@@ -68,4 +68,3 @@ jobs:
           args: deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          PROJECT_PATH: ./functions
