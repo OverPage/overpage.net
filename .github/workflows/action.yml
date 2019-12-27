@@ -5,8 +5,8 @@ on:
       - master
 
 jobs:
-  build:
-    name: Build
+  build-app:
+    name: BuildApp
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,6 +24,27 @@ jobs:
           npm run lint
         env:
           CI: true
+
+  build-functions:
+    name: BuildFunctions
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build, and test
+        run: |
+          cd functions
+          npm ci
+          npm run lint
+        env:
+          CI: true
+
   deploy:
     name: Deploy
     needs: build
