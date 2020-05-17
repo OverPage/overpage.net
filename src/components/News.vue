@@ -3,6 +3,9 @@
     <v-container>
       <h2>プレスリリース</h2>
       <a
+        href="https://prtimes.jp/main/html/rd/p/000000005.000041982.html"
+      >2020/3/27 YouTuber/VTuber向けマーケティング支援ツール「アポイタカラ 」で3Dファイルのサポート開始およびVRのカスタマイズツールを公開</a>
+      <a
         href="https://prtimes.jp/main/html/rd/p/000000004.000041982.html"
       >2019/12/26 ブロックチェーンを活用したYouTuber/VTuber向けマーケティング支援ツール「アポイタカラ 」でツイキャスをサポート開始！</a>
       <a
