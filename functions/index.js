@@ -9,12 +9,12 @@ const mailTransport = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: gmailEmail,
-    pass: gmailPassword
-  }
+    pass: gmailPassword,
+  },
 });
 
 // 管理者用のメールテンプレート
-const adminContents = data => {
+const adminContents = (data) => {
   return `以下内容でホームページよりお問い合わせを受けました。
 
 お名前：
@@ -24,7 +24,7 @@ ${data.name}
 ${data.email}
 
 内容：
-${data.contents}
+${data.content}
 `;
 };
 
@@ -35,7 +35,7 @@ exports.sendMail = functions.https.onCall((data, context) => {
     cc: gmailEmail,
     to: adminEmail,
     subject: 'ホームページお問い合わせ',
-    text: adminContents(data)
+    text: adminContents(data),
   };
 
   // 管理者へのメール送信
