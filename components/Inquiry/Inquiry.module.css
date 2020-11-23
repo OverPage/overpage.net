@@ -1,0 +1,41 @@
+.inquiry {
+  display: flex;
+  flex-direction: column;
+}
+.formInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+.formInput input {
+  width: 50%;
+  border-radius: 8px;
+  border: 1px solid #cbcbcb;
+  font-size: 16px;
+  padding: 8px;
+}
+.formInput textarea {
+  border-radius: 8px;
+  border: 1px solid #cbcbcb;
+  font-size: 16px;
+}
+.submitButtonWrapper {
+  margin: 24px 0;
+  text-align: center;
+}
+.submitButtonWrapper button {
+  cursor: pointer;
+  min-width: 120px;
+  text-align: center;
+  background: #454444;
+  padding: 12px 20px;
+  border-radius: 36px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+@media (max-width: 600px) {
+  .formInput input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,10 @@
+.company {
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0px 15px;
+  /* font-size: 12px; */
+  text-align: left;
+}
+.company th {
+  min-width: 100px;
+}

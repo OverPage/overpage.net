@@ -4,14 +4,14 @@ import "../styles/globals.css";
 
 const Noop: FC = ({ children }) => <>{children}</>;
 
-function MyApp({ Component, pageProps }) {
-  const Layout = (Component as any).Layout || Noop;
+function MyApp(props: { Component; pageProps }): JSX.Element {
+  const Layout = props.Component.Layout || Noop;
 
   return (
     <>
       <Head />
       <Layout>
-        <Component {...pageProps} />
+        <props.Component {...props.pageProps} />
       </Layout>
     </>
   );
