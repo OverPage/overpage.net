@@ -2,38 +2,37 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-app:
     name: BuildApp
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
         with:
-          version: 10
+          node-version: 10
       - name: npm install, build, and test
         run: |
           npm ci
           npm run build
-          npm run lint
         env:
           CI: true
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@main
         with:
-          name: hosting-build
-          path: ./dist
+          name: out
+          path: ./out/
 
   build-functions:
     name: BuildFunctions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
         with:
-          version: 10
+          node-version: 10
       - name: npm install, build, and test
         working-directory: ./functions
         run: |
@@ -47,18 +46,19 @@ jobs:
     needs: build-app
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
         with:
-          version: 10
+          node-version: 10
+      - name: Make artifact directory
+        run: mkdir out
       - name: Download Artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@main
         with:
-          name: hosting-build
-      - name: copy hosting-build to ./dist
-        run: |
-          mkdir dist
-          mv -f ./hosting-build/* ./dist/
+          name: out
+          path: ./out
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
@@ -71,10 +71,10 @@ jobs:
     needs: build-functions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
         with:
-          version: 10
+          node-version: 10
       - name: npm install
         working-directory: ./functions
         run: |
