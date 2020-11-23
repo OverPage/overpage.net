@@ -1,5 +1,10 @@
 const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
+
+// region設定
+const functionsBuilder = functions.region('asia-northeast1');
+
+// 環境変数
 const gmailEmail = functions.config().gmail.email;
 const gmailPassword = functions.config().gmail.password;
 const adminEmail = functions.config().admin.email;
@@ -28,7 +33,7 @@ ${data.content}
 `;
 };
 
-exports.sendMail = functions.https.onCall((data, context) => {
+exports.sendMail = functionsBuilder.https.onCall((data, context) => {
   // メール設定
   let adminMail = {
     from: gmailEmail,

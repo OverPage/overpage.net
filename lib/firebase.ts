@@ -11,7 +11,7 @@ const config = {
   messagingSenderId: "874650566173",
 };
 firebase.initializeApp(config);
-const functions = firebase.functions();
+const functions = firebase.app().functions("asia-northeast1");
 
 export type ContactForm = {
   name: string;
@@ -19,7 +19,9 @@ export type ContactForm = {
   content: string;
 };
 
-export function sendMail(contactForm: ContactForm) {
+export function sendMail(
+  contactForm: ContactForm
+): Promise<firebase.functions.HttpsCallableResult> {
   const mailer = functions.httpsCallable("sendMail");
   return mailer(contactForm);
 }
