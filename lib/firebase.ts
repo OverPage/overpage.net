@@ -10,7 +10,12 @@ const config = {
   storageBucket: "overpage-net.appspot.com",
   messagingSenderId: "874650566173",
 };
-firebase.initializeApp(config);
+
+// To not duplicate under hot rebuild.
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(config);
+}
+
 const functions = firebase.app().functions("asia-northeast1");
 
 export type ContactForm = {
