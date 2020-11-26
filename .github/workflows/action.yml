@@ -37,7 +37,7 @@ jobs:
         working-directory: ./functions
         run: |
           npm ci
-          npm run lint
+          npm run build
         env:
           CI: true
 
