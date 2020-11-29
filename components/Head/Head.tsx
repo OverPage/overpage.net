@@ -3,8 +3,8 @@ import NextHead from "next/head";
 import { DefaultSeo } from "next-seo";
 
 const config = {
-  title: "株式会社OverPage | OverPage Inc.",
-  titleTemplate: "%s - ACME Storefront",
+  title: "株式会社OverPage(OverPage, Inc.)",
+  titleTemplate: "%s",
   description: "株式会社OverPageのコーポレートサイトです。",
   canonical: "https://overpage.net",
   openGraph: {
@@ -12,12 +12,7 @@ const config = {
     locale: "en_IE",
     url: "https://overpage.net",
     site_name: "OverPage",
-  },
-  twitter: {
-    handle: "@nextjs",
-    site: "@nextjs",
-    cardType: "summary_large_image",
-  },
+  }
 };
 
 const Head: FC = () => {
