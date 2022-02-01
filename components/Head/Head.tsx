@@ -12,7 +12,7 @@ const config = {
     locale: "en_IE",
     url: "https://overpage.net",
     site_name: "OverPage",
-  }
+  },
 };
 
 const Head: FC = () => {
