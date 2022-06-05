@@ -9,7 +9,7 @@
     "deploy": "npm run build && firebase deploy"
   },
   "engines": {
-    "node": "10"
+    "node": "16"
   },
   "dependencies": {
     "firebase": "^8.1.1",
